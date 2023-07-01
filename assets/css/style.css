@@ -1,0 +1,43 @@
+/* PROJECT STYLES */
+
+/* GOOGLE FONTS */
+
+/* ROOT */
+
+:root {
+    --my-color: #123456;
+
+}
+
+/* BASE STYLES */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+}s
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: 0;
+}
+
+/* PAGE STYLES */
+

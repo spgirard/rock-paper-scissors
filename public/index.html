@@ -6,19 +6,75 @@
     <meta name="description" content="This is a website.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- CSS -->
     <!-- Vendor CSS -->
+    <!-- https://github.com/necolas/normalize.css/ -->
     <link rel="stylesheet" href="./assets/css/vendor/normalize.css">
     <!-- Site CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body>
-    <h1>Welcome</h1>
-    <p>Rock, Paper, Scissors will be played in the JS console.</p>
-    
-
+    <!-- JS -->
     <!-- Vendor JavaScript -->
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/edb58dd1dd.js" crossorigin="anonymous"></script>
+    <!-- https://github.com/Modernizr/Modernizr -->
     <script src="./assets/js/vendor/modernizr-3.12.0.min.js"></script>
     <!-- Site CSS -->
-    <script src="./assets/js/site.js"></script>
+    <script src="./assets/js/site.js" defer></script>
+</head>
+<body id="#top">
+
+    <!-- Main site container -->
+    <div class="site-container">
+        <!-- site nav -->
+        <nav class="site-nav">
+            <div class="nav-item">
+                <a href="#">Play</a>
+            </div>
+            <div class="nav-item">
+                <a href="https://github.com/spgirard" target="_blank"><i class="fa-brands fa-github" title="Git"></i></a>
+            </div>
+            <div class="nav-item">
+                <a href="https://www.linkedin.com/in/shawngirard/" target="_blank"><i class="fa-brands fa-linkedin" title="Linked In"></i></a>
+            </div>
+        </nav>
+        <!-- site nav -->
+        <header class="site-head">
+            <h1>Rock | Paper | Scissors</h1>       
+            <p>This is a simple implementation of the classic "rock, paper, scissors" game/decision-making tool.  In this game, you will play against a computer opponent.</p>
+        </header>
+
+        <main class="site-main">
+            <h1>Content</h1>
+            <p>content</p>
+        </main>
+
+        <footer class="site-footer">
+            <div class="foot-up">
+                <a href="#top"><i id="arrow" class="fa-regular fa-circle-up" title="Back to top"></i></a>
+            </div>
+            <div class="footer-message">
+                Developed for, but unaffiliated with, the <a href="https://www.theodinproject.com/" target="_blank">Odin Project</a>.
+            </div>
+            <div class="footer-copy">
+                <i class="fa-regular fa-copyright" title="Copyright"></i> 2023 Shawn Girard
+            </div>
+        </footer>
+    </div>
+    
+    <!--
+        <i class="fa-solid fa-thumbs-up fa-5x"></i>
+        Person:     <i class="fa-regular fa-user"></i>
+        Computer:   <i class="fa-regular fa-computer"></i>
+        Rock:       <i class="fa-regular fa-hand-back-fist"></i>
+        Paper:      <i class="fa-regular fa-hand"></i>
+        Scissors:   <i class="fa-regular fa-hand-scissors"></i>
+        Up Arrow:   <i class="fa-regular fa-circle-up" title="Back to top"></i>
+        Copyright:  <i class="fa-regular fa-copyright"></i>
+        git:        <i class="fa-brands fa-github"></i>
+        linkedin:   <i class="fa-brands fa-linkedin"></i>
+
+        Animations: fa-bounce fa-shake
+    -->
+
 </body>
 </html>

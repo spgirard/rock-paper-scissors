@@ -1,12 +1,22 @@
 /* PROJECT STYLES */
 
 /* GOOGLE FONTS */
+/*
+font-family: 'Open Sans', sans-serif;
+font-family: 'PT Serif', serif;
+*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 
 /* ROOT */
+/* https://coolors.co/palette/8ecae6-219ebc-023047-ffb703-fb8500 */
 
 :root {
-    --my-color: #123456;
-
+    --lt-blue: #8ECAE6;
+    --md-blue: #219EBC;
+    --dk-blue: #023047;
+    --my-yellow: #FFB703;
+    --my-orange: #FB8500;
 }
 
 /* BASE STYLES */
@@ -29,10 +39,28 @@ body {
     margin: 0;
     height: 100vh;
     width: 100%;
-}s
+    background-color: var(--my-orange);
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3 {
+    padding: 0;
+    margin: 0;
+    color: var(--my-yellow);
+    font-family: 'PT Serif', serif;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
 
 a {
     text-decoration: none;
+    color: var(--md-blue);
+}
+
+a:hover {
+    color: var(--my-yellow);
 }
 
 button {
@@ -41,3 +69,68 @@ button {
 
 /* PAGE STYLES */
 
+.site-container {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    background-color: var(--dk-blue);
+    color: var(--lt-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* NAV STYLES */
+
+.site-nav {
+    width: 100%;
+    flex: 0;
+    padding: .5rem;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: .75rem
+}
+
+/* HEADER STYLES */
+
+.site-head {
+    flex: 0;
+    width: 90%;
+    margin: 1.5rem;
+    padding: 1rem;
+    border: var(--my-yellow) 2px solid;
+    border-radius: 1rem;
+}
+
+.site-head h1 {
+    text-align: center;
+}
+
+.site-head p {
+    text-align: left;
+    font-size: 1.25rem;
+    margin-top: .5rem;
+}
+
+
+.site-main {
+    flex: 1;
+}
+
+/* FOOTER STYLES */
+
+.site-footer {
+    flex: 0;
+    padding: 1rem;
+    font-size: .75rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
+}
+
+.foot-up {
+    font-size: 1rem;
+}

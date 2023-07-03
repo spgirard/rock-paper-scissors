@@ -27,8 +27,20 @@
     <div class="site-container">
         <!-- site nav -->
         <nav class="site-nav">
+            <div class="nav-text">
+                Game:
+            </div>
             <div class="nav-item">
-                <a href="#">Play</a>
+                <a href="https://wrpsa.com/the-official-rules-of-rock-paper-scissors/" target="_blank">Rules</a>
+            </div>
+            <div class="nav-item">
+                <a href="https://wrpsa.com/the-official-history-of-rock-paper-scissors/" target="_blank">History</a>
+            </div>
+            <div class="nav-item">
+                <a href="https://wrpsa.com/membership/" target="_blank">Go Pro</a>
+            </div>
+            <div class="nav-text">
+                Author:
             </div>
             <div class="nav-item">
                 <a href="https://github.com/spgirard" target="_blank"><i class="fa-brands fa-github" title="Git"></i></a>
@@ -37,17 +49,102 @@
                 <a href="https://www.linkedin.com/in/shawngirard/" target="_blank"><i class="fa-brands fa-linkedin" title="Linked In"></i></a>
             </div>
         </nav>
-        <!-- site nav -->
+        <!-- site header -->
         <header class="site-head">
             <h1>Rock | Paper | Scissors</h1>       
-            <p>This is a simple implementation of the classic "rock, paper, scissors" game/decision-making tool.  In this game, you will play against a computer opponent.</p>
+            <p>This is a basic implementation of the classic "rock, paper, scissors" game... or decision-making tool <i class="fa-regular fa-face-smile-wink" title="Wink"></i>.  In this version of the game, you will play against a computer opponent.</p>
         </header>
 
+        <!-- for score and round results-->
+        <div class="info-panel-container">
+            <div class="info-panel-title">
+                <h2>Info Panel</h2>
+            </div>
+            <div class="info-panel-data">
+                <div class="score-container">
+                    <div class="score-label">
+                        The Score
+                    </div>
+
+                    <!-- human score -->
+                    <div class="player-data">
+                        <div class="player-img">
+                            <i class="fa-regular fa-user" title="human picture"></i>
+                        </div>
+                        <div class="player-score">
+                            0
+                        </div>
+                    </div>
+
+                    <!-- computer score -->
+                    <div class="player-data">
+                        <div class="player-img">
+                            <i class="fa-solid fa-computer" title="computer picture"></i>
+                        </div>
+                        <div class="player-score">
+                            0
+                        </div>
+                    </div>
+                </div>
+
+                <!-- results of the round -->
+                <div class="results-container">
+                    <div class="results-label">
+                        The Results
+                    </div>
+                </div> 
+
+            </div>
+        </div>
+
+        <!-- for game play buttons -->
+
+        <div class="game-container">
+            <div class="game-title">
+                <h2>Make Your Choice</h2>
+            </div>
+            <div class="game-buttons">
+                <div class="choice">
+                    <div class="choice-icon">
+                        <i class="fa-regular fa-hand-back-fist" title="choose rock"></i>
+                    </div>
+                    <div class="choice-label">
+                        Rock
+                    </div>
+                </div>
+                <div class="choice">
+                    <div class="choice-icon">
+                        <i class="fa-regular fa-hand" title="choose paper"></i>
+                    </div>
+                    <div class="choice-label">
+                        Paper
+                    </div>
+                </div>
+                <div class="choice">
+                    <div class="choice-icon">
+                        <i class="fa-regular fa-hand-scissors" title="choose scissors"></i>
+                    </div>
+                    <div class="choice-label">
+                        Scissors
+                    </div>
+                </div>
+                <div class="options">
+                    <button>Clear Score</button>          
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <!-- main site content -->
         <main class="site-main">
             <h1>Content</h1>
             <p>content</p>
         </main>
 
+
+        <!-- site footer -->
         <footer class="site-footer">
             <div class="foot-up">
                 <a href="#top"><i id="arrow" class="fa-regular fa-circle-up" title="Back to top"></i></a>
@@ -62,18 +159,7 @@
     </div>
     
     <!--
-        <i class="fa-solid fa-thumbs-up fa-5x"></i>
-        Person:     <i class="fa-regular fa-user"></i>
-        Computer:   <i class="fa-regular fa-computer"></i>
-        Rock:       <i class="fa-regular fa-hand-back-fist"></i>
-        Paper:      <i class="fa-regular fa-hand"></i>
-        Scissors:   <i class="fa-regular fa-hand-scissors"></i>
-        Up Arrow:   <i class="fa-regular fa-circle-up" title="Back to top"></i>
-        Copyright:  <i class="fa-regular fa-copyright"></i>
-        git:        <i class="fa-brands fa-github"></i>
-        linkedin:   <i class="fa-brands fa-linkedin"></i>
-
-        Animations: fa-bounce fa-shake
+        Animations: fa-shake
     -->
 
 </body>

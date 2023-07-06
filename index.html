@@ -25,6 +25,7 @@
 
     <!-- Main site container -->
     <div class="site-container">
+        
         <!-- site nav -->
         <nav class="site-nav">
             <div class="nav-text">
@@ -37,114 +38,115 @@
                 <a href="https://wrpsa.com/the-official-history-of-rock-paper-scissors/" target="_blank">History</a>
             </div>
             <div class="nav-item">
+                <a href="https://wrpsa.com/rock-paper-scissors-beginner-strategies/" target="_blank">Strategy</a>
+            </div>
+            <div class="nav-item">
                 <a href="https://wrpsa.com/membership/" target="_blank">Go Pro</a>
             </div>
-            <div class="nav-text">
-                Author:
-            </div>
-            <div class="nav-item">
-                <a href="https://github.com/spgirard" target="_blank"><i class="fa-brands fa-github" title="Git"></i></a>
-            </div>
-            <div class="nav-item">
-                <a href="https://www.linkedin.com/in/shawngirard/" target="_blank"><i class="fa-brands fa-linkedin" title="Linked In"></i></a>
-            </div>
+            
         </nav>
+
         <!-- site header -->
         <header class="site-head">
             <h1>Rock | Paper | Scissors</h1>       
             <p>This is a basic implementation of the classic "rock, paper, scissors" game... or decision-making tool <i class="fa-regular fa-face-smile-wink" title="Wink"></i>.  In this version of the game, you will play against a computer opponent.</p>
         </header>
 
-        <!-- for score and round results-->
-        <div class="info-panel-container">
-            <div class="info-panel-title">
-                <h2>Info Panel</h2>
-            </div>
-            <div class="info-panel-data">
-                <div class="score-container">
-                    <div class="score-label">
-                        The Score
-                    </div>
-
-                    <!-- human score -->
-                    <div class="player-data">
-                        <div class="player-img">
-                            <i class="fa-regular fa-user" title="human picture"></i>
-                        </div>
-                        <div class="player-score">
-                            0
-                        </div>
-                    </div>
-
-                    <!-- computer score -->
-                    <div class="player-data">
-                        <div class="player-img">
-                            <i class="fa-solid fa-computer" title="computer picture"></i>
-                        </div>
-                        <div class="player-score">
-                            0
-                        </div>
-                    </div>
-                </div>
-
-                <!-- results of the round -->
-                <div class="results-container">
-                    <div class="results-label">
-                        The Results
-                    </div>
-                </div> 
-
-            </div>
-        </div>
-
-        <!-- for game play buttons -->
-
-        <div class="game-container">
-            <div class="game-title">
-                <h2>Make Your Choice</h2>
-            </div>
-            <div class="game-buttons">
-                <div class="choice">
-                    <div class="choice-icon">
-                        <i class="fa-regular fa-hand-back-fist" title="choose rock"></i>
-                    </div>
-                    <div class="choice-label">
-                        Rock
-                    </div>
-                </div>
-                <div class="choice">
-                    <div class="choice-icon">
-                        <i class="fa-regular fa-hand" title="choose paper"></i>
-                    </div>
-                    <div class="choice-label">
-                        Paper
-                    </div>
-                </div>
-                <div class="choice">
-                    <div class="choice-icon">
-                        <i class="fa-regular fa-hand-scissors" title="choose scissors"></i>
-                    </div>
-                    <div class="choice-label">
-                        Scissors
-                    </div>
-                </div>
-                <div class="options">
-                    <button>Clear Score</button>          
-                </div>
-            </div>
-
-        </div>
-
-
-
         <!-- main site content -->
         <main class="site-main">
-            <h1>Content</h1>
-            <p>content</p>
+            <!-- div for "start-game buttons"-->
+            <div id="button-area" class="button-area">
+                <button id="start">Start Game</button>
+            </div>
+            <!-- div for game -->
+            <div id="game-area" class="game-area">
+                <!-- MAIN GAME IS HERE -->
+
+                <!-- for game play buttons -->
+                <div class="game-container">
+                    <div class="game-title">
+                        <h2>Make Your Choice</h2>
+                    </div>
+                    <div class="game-buttons">
+                        <div class="choice">
+                            <div class="choice-icon">
+                                <i id="player-rock" class="fa-regular fa-hand-back-fist" title="choose rock"></i>
+                            </div>
+                            <div class="choice-label">
+                                Rock
+                            </div>
+                        </div>
+                        <div class="choice">
+                            <div class="choice-icon">
+                                <i id="player-paper" class="fa-regular fa-hand" title="choose paper"></i>
+                            </div>
+                            <div class="choice-label">
+                                Paper
+                            </div>
+                        </div>
+                        <div class="choice">
+                            <div class="choice-icon">
+                                <i id="player-scissors" class="fa-regular fa-hand-scissors" title="choose scissors"></i>
+                            </div>
+                            <div class="choice-label">
+                                Scissors
+                            </div>
+                        </div>
+                        <div class="options">
+                            <button id="clear-score">Clear Score</button>          
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- for score and round results-->
+                <div class="info-panel-container">
+                    <div class="info-panel-title">
+                        <h2>Score & Message Board</h2>
+                    </div>
+                    <div class="info-panel-data">
+                        <div class="score-container">
+                            <!-- human score -->
+                            <div class="player-data">
+                                <div class="player-img">
+                                    <i class="fa-regular fa-user" title="human picture"></i>
+                                </div>
+                                <div id="human-score" class="player-score">
+                                    <!-- score -->
+                                </div>
+                            </div>
+                            <!-- computer score -->
+                            <div class="player-data">
+                                <div class="player-img">
+                                    <i class="fa-solid fa-computer" title="computer picture"></i>
+                                </div>
+                                <div id="computer-score" class="player-score">
+                                    <!-- score -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- results of the round -->
+                        <div class="results-container">
+                            <div id="round-message" class="round-message">
+                                <!-- message -->
+                            </div>
+                            <div id="human-message" class="player-message">
+                                <!-- message -->
+                            </div>
+                            <div id="computer-message" class="player-message">
+                                <!-- message -->
+                            </div>
+   
+                        </div> 
+
+                    </div>
+                </div>
+
+                <!-- // END GAME AREA -->
+            </div>            
         </main>
-
-
-        <!-- site footer -->
+   
+       <!-- site footer -->
         <footer class="site-footer">
             <div class="foot-up">
                 <a href="#top"><i id="arrow" class="fa-regular fa-circle-up" title="Back to top"></i></a>
@@ -155,12 +157,13 @@
             <div class="footer-copy">
                 <i class="fa-regular fa-copyright" title="Copyright"></i> 2023 Shawn Girard
             </div>
+            <div class="foot-nav">            
+                <a href="https://github.com/spgirard" target="_blank"><i class="fa-brands fa-github" title="Git"></i></a>
+                <a href="https://www.linkedin.com/in/shawngirard/" target="_blank"><i class="fa-brands fa-linkedin" title="Linked In"></i></a>
+            </div>
         </footer>
-    </div>
-    
-    <!--
-        Animations: fa-shake
-    -->
+
+    </div> <!-- END MAIN SITE CONTAINER -->
 
 </body>
 </html>

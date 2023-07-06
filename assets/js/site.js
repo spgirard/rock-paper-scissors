@@ -5,155 +5,173 @@ console.log('Welcome to RPS...');
 const toTop = document.getElementById("arrow");
 toTop.addEventListener("mouseenter", (event) => {toTop.classList.toggle('fa-bounce')});
 toTop.addEventListener("mouseleave", (event) => {toTop.classList.toggle('fa-bounce')});
-// (event) => {toTop.classList.toggle('fa-bounce')}
 
+// set game vars
+let numThrows = 0;
+let humanScore = 0;
+let computerScore = 0;
+let humanMessage = "";
+let computerMessage = "";
+let roundMessage = "";
 
+// set score areas
+const humanScoreArea = document.getElementById("human-score");
+const computerScoreArea = document.getElementById("computer-score");
 
+// set message areas
+const humanMessageArea = document.getElementById("human-message");
+const computerMessageArea = document.getElementById("computer-message");
+const roundMessageArea = document.getElementById("round-message");
 
-// let playerScore = 0;
-// let computerScore = 0;
+// set up player buttons
+const playerRock = document.getElementById("player-rock");
+const playerPaper = document.getElementById("player-paper");
+const playerScissors = document.getElementById("player-scissors");
 
-// function getComputerChoice() {
-//     // Generate random choice between 1 and 3 and assign choice value
+// set up player button hovers (enter/leave)
+// rock
+playerRock.addEventListener("mouseenter", (event) => {playerRock.classList.toggle('fa-shake')});
+playerRock.addEventListener("mouseleave", (event) => {playerRock.classList.toggle('fa-shake')});
+// paper
+playerPaper.addEventListener("mouseenter", (event) => {playerPaper.classList.toggle('fa-shake')});
+playerPaper.addEventListener("mouseleave", (event) => {playerPaper.classList.toggle('fa-shake')});
+//scissors
+playerScissors.addEventListener("mouseenter", (event) => {playerScissors.classList.toggle('fa-shake')});
+playerScissors.addEventListener("mouseleave", (event) => {playerScissors.classList.toggle('fa-shake')});
 
-//     let computerChoice;
-//     let randomNumber = Math.floor(Math.random() * 3) + 1;
+// set up player button click
+playerRock.addEventListener("click", function(){
+    playRound("Rock");
+});
+playerPaper.addEventListener("click", function(){
+    playRound("Paper");
+});
+playerScissors.addEventListener("click", function(){
+    playRound("Scissors");
+});
+
+// we start a game by hiding the game buttons and revealing the game area.
+const buttonArea = document.getElementById("button-area");
+const gameArea = document.getElementById("game-area");
+// start a game
+const startGame = document.getElementById("start");
+startGame.addEventListener("click", function(){
+    startRound();
+});
+
+// clear the score
+const clearScore = document.getElementById("clear-score");
+clearScore.addEventListener("click", function(){
+    clearTheScore();
+});
+
+// FUNCTIONS
+
+function clearTheScore() {
+    updateScore(0,0);
+    humanMessage = "You are... waiting to throw!";
+    computerMessage = "Computer is... ready to throw!";
+    roundMessage = "Scoreboard is all clear!"
+    updateMessage(humanMessage, computerMessage, roundMessage);
+}
+
+function updateScore(humanScore, computerScore) {
+    humanScoreArea.textContent = humanScore;
+    computerScoreArea.textContent = computerScore;
+}
+
+function updateMessage(humanMessage, computerMessage, roundMessage) {
+    humanMessageArea.textContent = humanMessage;
+    computerMessageArea.textContent = computerMessage;
+    roundMessageArea.textContent = roundMessage;
+}
+
+function startRound() {
+
+    humanMessage = "You are... waiting to throw!";
+    computerMessage = "Computer is... ready to throw!";
+
+    roundMessage = "Shake and throw and.... good luck!";
+
+    updateScore(humanScore, computerScore);
+    updateMessage(humanMessage, computerMessage, roundMessage);
+   
+    buttonArea.style.display = "none";
+    gameArea.style.display = "flex";
+
+}
+
+function getComputerChoice() {
+    // Generate random choice between 1 and 3 and assign choice value
+
+    let computerChoice;
+    let randomNumber = Math.floor(Math.random() * 3) + 1;
     
-//     switch (randomNumber) {
-//         case 1:
-//             computerChoice = "Rock";
-//             break;
-//         case 2:
-//             computerChoice = "Paper";
-//             break;
-//         case 3:
-//             computerChoice = "Scissors";
-//             break;
-//     }
+    switch (randomNumber) {
+        case 1:
+            computerChoice = "Rock";
+            break;
+        case 2:
+            computerChoice = "Paper";
+            break;
+        case 3:
+            computerChoice = "Scissors";
+            break;
+    }
 
-//     console.log(`Computer chose ${computerChoice}`);
-//     return computerChoice;
-// }
+    computerMessage = `Computer chose ${computerChoice}`;
+    return computerChoice;
+}
 
-// // function getPlayerChoiceTesting() {
-// //     // This version for testing
-// //     // Generate random choice between 1 and 3 and assign choice value
+function playRound(player) {
+    // Compare choices and determine winner
 
-// //     let playerChoice;
-// //     let randomNumber = Math.floor(Math.random() * 3) + 1;
-    
-// //     switch (randomNumber) {
-// //         case 1:
-// //             playerChoice = "Rock";
-// //             break;
-// //         case 2:
-// //             playerChoice = "Paper";
-// //             break;
-// //         case 3:
-// //             playerChoice = "Scissors";
-// //             break;
-// //     }
+    humanMessage = `You chose ${player}`;
+    let computer = getComputerChoice();
 
-// //     console.log(`Player chose ${playerChoice}`);
-// //     return playerChoice;
-// // }
-
-// function getPlayerChoice() {
-//     // Ask player for their move
-
-//     let playerChoice = prompt("Rock, Paper, or Scissors?");
-
-//     switch (playerChoice.toUpperCase()) {
-//         case "ROCK":
-//             playerChoice = "Rock";
-//             break;
-//         case "PAPER":
-//             playerChoice = "Paper";
-//             break;
-//         case "SCISSORS":
-//             playerChoice = "Scissors";
-//             break;
-//         default:
-//             playerChoice = "Error";
-//             break;        
-//     }
-//     console.log(`You chose ${playerChoice}`);
-//     return playerChoice;
-// }
-
-// function playRound(player, computer) {
-//     // Compare choices and determine winner
-
-//     let result;
-
-//     if (player == "Rock") {
-//         switch (computer) {
-//             case "Rock":
-//                 result = "It's a tie!";
-//                 break;
-//             case "Paper":
-//                 result = "Paper wraps Rock, you lose!";
-//                 computerScore ++;
-//                 break;
-//             case "Scissors":
-//                 result = "Rock breaks Scissors, you win!"
-//                 playerScore ++;
-//                 break;     
-//         }
-//     } else if (player == "Paper") {
-//         switch (computer) {
-//             case "Rock":
-//                 result = "Paper wraps Rock, you win!";
-//                 playerScore ++;
-//                 break;
-//             case "Paper":
-//                 result = "It's a tie!";
-//                 break;
-//             case "Scissors":
-//                 result = "Scissors cut paper, you lose!"
-//                 computerScore ++;
-//                 break;
-//         }
-//     } else if (player == "Scissors") {
-//         switch (computer) {
-//             case "Rock":
-//                 result = "Rock breaks Scissors, you lose!";
-//                 computerScore ++;
-//                 break;
-//             case "Paper":
-//                 result = "Scissors cut paper, you win!";
-//                 playerScore ++;
-//                 break;
-//             case "Scissors":
-//                 result = "It's a tie!"
-//                 break;
-//         }
-//     } else {
-//         result = "You entered an invalid tool, so you lose!"
-//     }
-
-//     console.log(result);
-
-// }
-
-// function playGame() {
-//     // Play the game until someone has 5 points.
-
-//     let winMessage;
-
-//     while (playerScore < 5 && computerScore < 5) {
-//         playRound(getPlayerChoice(), getComputerChoice())
-//     }
-
-//     if (playerScore == 5) {
-//         winMessage = "*** Player Wins ***";
-//     }
-
-//     if (computerScore == 5) {
-//         winMessage = "*** Computer Wins ***";
-//     }
-
-//     return winMessage;
-// }
-
-// console.log(playGame());
+    if (player == "Rock") {
+        switch (computer) {
+            case "Rock":
+                roundMessage = "This round is a tie!";
+                break;
+            case "Paper":
+                roundMessage = "Paper wraps Rock, you lose!";
+                computerScore ++;
+                break;
+            case "Scissors":
+                roundMessage = "Rock breaks Scissors, you win!"
+                humanScore ++;
+                break;     
+        }
+    } else if (player == "Paper") {
+        switch (computer) {
+            case "Rock":
+                roundMessage = "Paper wraps Rock, you win!";
+                humanScore ++;
+                break;
+            case "Paper":
+                roundMessage = "This round is a tie!";
+                break;
+            case "Scissors":
+                roundMessage = "Scissors cut paper, you lose!"
+                computerScore ++;
+                break;
+        }
+    } else if (player == "Scissors") {
+        switch (computer) {
+            case "Rock":
+                roundMessage = "Rock breaks Scissors, you lose!";
+                computerScore ++;
+                break;
+            case "Paper":
+                roundMessage = "Scissors cut paper, you win!";
+                humanScore ++;
+                break;
+            case "Scissors":
+                roundMessage = "This round is a tie!"
+                break;
+        }
+    }
+    updateScore(humanScore, computerScore);
+    updateMessage(humanMessage, computerMessage, roundMessage);
+}

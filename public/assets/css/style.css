@@ -85,6 +85,7 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 0 0 .5rem .5rem;
 }
 
 /* NAV STYLES */
@@ -130,10 +131,39 @@ button {
     margin-top: .5rem;
 }
 
-/* CONTENT STYLES */
+/* MAIN CONTENT AREA STYLES */
 
 .site-main {
+    width: 100%;
     flex: 1;
+    text-align: center;
+}
+
+.button-area {
+    width: 100%;
+    min-height: 13.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-area button {
+    font-size: 1.5rem;
+    background-color: var(--my-yellow);
+    padding: .5rem;
+    box-shadow: var(--dk-blue) 2px 2px;
+    border-radius: 100%;
+    width: 10rem;
+    height: 10rem;
+
+}
+
+.game-area {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* INFO (SCORE AND RESULT) STYLES */
@@ -169,18 +199,10 @@ button {
 .score-container {
     display: flex;
     flex-direction: column;
-    align-items: start;
-    justify-content: start;
+    align-items: center;
+    justify-content: center;
     gap: .5rem;
-    /* padding: .5rem; */
     min-width: 40%;
-}
-
-.score-label {
-    flex: 0;
-    font-weight: bold;
-    padding: .5rem;
-    color: var(--dk-blue);
 }
 
 .player-data {
@@ -213,19 +235,24 @@ button {
 
 .results-container {
     display: flex;
-    flex-direction: col;
+    flex-direction: column;
     border: var(--md-blue) 1px solid;
     border-radius: .5rem;
-    /* padding: .5rem; */
     min-width: 40%;
 }
 
-.results-label {
-    font-weight: bold;
-    background-color: var(--md-blue);
+.player-message {
+    flex:1;
     padding: .5rem;
-    border-radius: .5rem .5rem 0 0;
-    color: var(--my-yellow);
+    color: var(--dk-blue);
+}
+
+.round-message {
+    flex:1;
+    padding: .5rem;
+    color: var(--dk-blue);
+    font-style: italic;
+    font-size: 1.25rem;
 }
 
 /* GAME STYLES */
@@ -262,22 +289,29 @@ button {
     text-shadow: var(--dk-blue) 1px 1px;
 }
 
-.choice-icon {
+.choice-icon {    
     font-size: 3rem;
+    padding: 1rem;
+}
+
+.choice-icon i {
+    text-shadow: var(--dk-blue) 2px 2px;
 }
 
 .choice-label {
     font-size: 2rem;
+    text-shadow: var(--dk-blue) 2px 2px;
 }
 
 .options button {
     font-size: 1.5rem;
     background-color: var(--my-yellow);
     padding: .5rem;
-    border-radius: .5rem;
-    box-shadow: var(--dk-blue) 1px 1px;
+    box-shadow: var(--dk-blue) 2px 2px;
+    border-radius: 100%;
+    width: 10rem;
+    height: 10rem;
 }
-
 
 /* FOOTER STYLES */
 
@@ -292,5 +326,9 @@ button {
 }
 
 .foot-up {
+    font-size: 1rem;
+}
+
+.foot-nav {
     font-size: 1rem;
 }
